@@ -24,15 +24,15 @@ def getGPU(url):
         'coreclock': r.html.xpath('//*[@id="product-page"]/section/div[2]/section/div/div[2]/div[4]/div[6]/div/p', first = True).text
     }
 
-    f = open("Tables/GPU.csv","a+")
+    f = open("Components/Tables/GPU.csv","a+")
     sys.stdout = f
     print(product['name'],product['price'], product['manufactuer'], product['chipset'], product['memory'], product['boostclock'], product['coreclock'], sep="|")
     f.close()
     sys.stdout = original
     return product
 
-if os.path.isfile("Tables/GPU.csv"):
-    os.remove("Tables/GPU.csv")
+if os.path.isfile("Components/Tables/GPU.csv"):
+    os.remove("Components/Tables/GPU.csv")
 
 URLS = [
         "https://pcpartpicker.com/product/MYMwrH/msi-geforce-gtx-1660-6-gb-ventus-xs-oc-video-card-gtx-1660-ventus-xs-6g-oc",

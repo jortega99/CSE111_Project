@@ -23,15 +23,15 @@ def getCPU(url):
         'boostclock': r.html.xpath('//*[@id="product-page"]/section/div[2]/section/div/div[1]/div[4]/div[5]/div/p',first=True).text    
     }
 
-    f = open("Tables/CPU.csv","a+")
+    f = open("Components/Tables/CPU.csv","a+")
     sys.stdout = f
     print(product['name'],product['price'], product['manufactuer'], product['corecount'], product['coreclock'], product['boostclock'], sep="|")
     f.close()
     sys.stdout = original
     return product
 
-if os.path.isfile("Tables/CPU.csv"):
-    os.remove("Tables/CPU.csv")
+if os.path.isfile("Components/Tables/CPU.csv"):
+    os.remove("Components/Tables/CPU.csv")
 
 URLS = ["https://pcpartpicker.com/product/9nm323/amd-ryzen-5-3600-36-thz-6-core-processor-100-100000031box",
         "https://pcpartpicker.com/product/QKJtt6/amd-ryzen-7-3700x-36-ghz-8-core-processor-100-100000071box",
