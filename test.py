@@ -1,18 +1,10 @@
-from os import sep
-from requests_html import HTMLSession
+import requests
+from bs4 import BeautifulSoup as bs
 
-def getCPU(url):
-    s = HTMLSession()
-    r = s.get(url)
-    r.html.render(sleep=1)
+URL = "https://pcpartpicker.com/product/RnDkcf/nvidia-geforce-rtx-3080-10-gb-founders-edition-video-card-9001g1332530000"
+r = requests.get(URL)
 
-    product = {
-        'name': r.html.xpath('//*[@id="category_content"]', first = True).text 
-    }
+soup = bs(r.content, 'html.parser')
 
-
-    #print(product['name'],product['price'], product['manufactuer'], product['corecount'], product['coreclock'], product['boostclock'], sep="|")
-    print(product['name'])
-    return product
-
-getCPU('https://pcpartpicker.com/products/cpu/')
+first_header = soup.find("div", {"class": "group__content"})
+print(first_header)
