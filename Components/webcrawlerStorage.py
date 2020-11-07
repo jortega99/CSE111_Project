@@ -22,10 +22,13 @@ def getGPU(url):
         'type': r.html.xpath('//*[@id="product-page"]/section/div[2]/section/div/div[1]/div[3]/div[5]/div/p', first = True).text,
         'cache': r.html.xpath('//*[@id="product-page"]/section/div[2]/section/div/div[1]/div[3]/div[6]/div/p', first = True).text,
     }
+    p = product['price']
+    p = p.replace('$','')
+    p = float(p)
 
     f = open("Components/Tables/Storage.csv","a+")
     sys.stdout = f
-    print(product['name'],product['price'], product['manufactuer'], product['capacity'], product['type'], product['cache'], sep="|")
+    print(product['name'],p , product['manufactuer'], product['capacity'], product['type'], product['cache'], sep="|")
     f.close()
     sys.stdout = original
     return product

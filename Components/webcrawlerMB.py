@@ -21,10 +21,13 @@ def getGPU(url):
         'socket': r.html.xpath('//*[@id="product-page"]/section/div[2]/section[2]/div/div[1]/div[2]/div[3]/div/p', first = True).text,
         'formfactor': r.html.xpath('//*[@id="product-page"]/section/div[2]/section[2]/div/div[1]/div[2]/div[4]/div/p', first = True).text,
     }
+    p = product['price']
+    p = p.replace('$','')
+    p = float(p)
 
     f = open("Components/Tables/MB.csv","a+")
     sys.stdout = f
-    print(product['name'],product['price'], product['manufactuer'], product['socket'], product['formfactor'], sep="|")
+    print(product['name'],p, product['manufactuer'], product['socket'], product['formfactor'], sep="|")
     f.close()
     sys.stdout = original
     return product

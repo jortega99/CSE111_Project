@@ -23,10 +23,13 @@ def getGPU(url):
         'boostclock': r.html.xpath('//*[@id="product-page"]/section/div[2]/section/div/div[2]/div[4]/div[7]/div/p', first = True).text,
         'coreclock': r.html.xpath('//*[@id="product-page"]/section/div[2]/section/div/div[2]/div[4]/div[6]/div/p', first = True).text
     }
+    p = product['price']
+    p = p.replace('$','')
+    p = float(p)
 
     f = open("Components/Tables/GPU.csv","a+")
     sys.stdout = f
-    print(product['name'],product['price'], product['manufactuer'], product['chipset'], product['memory'], product['boostclock'], product['coreclock'], sep="|")
+    print(product['name'],p, product['manufactuer'], product['chipset'], product['memory'], product['boostclock'], product['coreclock'], sep="|")
     f.close()
     sys.stdout = original
     return product

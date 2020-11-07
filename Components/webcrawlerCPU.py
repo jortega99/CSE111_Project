@@ -22,10 +22,13 @@ def getCPU(url):
         'coreclock': r.html.xpath('//*[@id="product-page"]/section/div[2]/section/div/div[1]/div[4]/div[4]/div/p',first = True).text,
         'boostclock': r.html.xpath('//*[@id="product-page"]/section/div[2]/section/div/div[1]/div[4]/div[5]/div/p',first=True).text    
     }
+    p = product['price']
+    p = p.replace('$','')
+    p = float(p)
 
     f = open("Components/Tables/CPU.csv","a+")
     sys.stdout = f
-    print(product['name'],product['price'], product['manufactuer'], product['corecount'], product['coreclock'], product['boostclock'], sep="|")
+    print(product['name'], p, product['manufactuer'], product['corecount'], product['coreclock'], product['boostclock'], sep="|")
     f.close()
     sys.stdout = original
     return product
