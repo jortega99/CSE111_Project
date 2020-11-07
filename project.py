@@ -2,6 +2,8 @@ import sqlite3
 from sqlite3 import Error
 from pathlib import Path
 import sys
+import subprocess
+import os
 original = sys.stdout
 
 def openConnection(_dbFile):
@@ -90,6 +92,31 @@ def createTable(_conn):
                 Case_formfactor VARCHAR(10) not null)"""
         _conn.execute(sql)
 
+        sql = """CREATE TABLE RAM(
+                RAM_name VARCHAR(100) not null,
+                RAM_price decimal(7,2) not null,
+                RAM_manufactuer VARCHAR(10) not null,
+                RAM_speed VARCHAR(15) not null,
+                RAM_modules VARCHAR(10) not null)"""
+        _conn.execute(sql)
+
+        sql = """CREATE TABLE Build (
+                b_user CHAR(30) not null,
+                b_code VARCHAR(10) not null,
+                b_cpu VARCHAR(60) not null,
+                b_gpu VARCHAR(60) not null,
+                b_motherboard VARCHAR(60) not null,
+                b_psu VARCHAR(60) not null,
+                b_storage VARCHAR(100) not null,
+                b_tower VARCHAR(60) not null,
+                b_ram VARCHAR(100) not null)"""
+        _conn.execute(sql)
+
+        sql = """CREATE TABLE user (
+                u_name VARCHAR(30) not null,
+                u_password VARCHAR(20) not null)"""
+        _conn.execute(sql)
+
         _conn.commit()
         print("success")
     except Error as e:
@@ -124,6 +151,15 @@ def dropTable(_conn):
         sql = """ DROP TABLE Tower """
         _conn.execute(sql)
 
+        sql = """DROP TABLE RAM"""
+        _conn.execute(sql)
+
+        sql = """DROP TABLE Build"""
+        _conn.execute(sql)
+
+        sql = """DROP TABLE user"""
+        _conn.execute(sql)
+
         print("Success")
     except Error as e:
         _conn.rollback()
@@ -136,7 +172,7 @@ def populateTable(_conn):
     print("++++++++++++++++++++++++++++++++++")
     print("Populate table")
 
-
+    subprocess.Popen(["bash", "test.sh"])
     print("++++++++++++++++++++++++++++++++++")
 
 def main():
@@ -145,9 +181,9 @@ def main():
     # create a database connection
     conn = openConnection(database)
     with conn:
-        dropTable(conn)
-        createTable(conn)
-        #populateTable(conn)
+        #dropTable(conn)
+        #createTable(conn)
+        populateTable(conn)
 
     closeConnection(conn, database)
 

@@ -1,0 +1,1 @@
+sqlite3 project.db < load.sql

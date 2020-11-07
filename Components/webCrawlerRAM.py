@@ -42,11 +42,11 @@ URLS = [
         "https://pcpartpicker.com/product/VNJtt6/corsair-16-gb-2-x-8-gb-ddr4-3600-memory-cmk16gx4m2d3600c18",
         "https://pcpartpicker.com/product/2TFKHx/crucial-ballistix-16-gb-2-x-8-gb-ddr4-3600-memory-bl2k8g36c16u4b",
         "https://pcpartpicker.com/product/XJYWGX/gskill-aegis-8gb-1-x-8gb-ddr4-3000-memory-f4-3000c16s-8gisb",
-        "https://pcpartpicker.com/product/QBrYcf/kingston-hyperx-fury-16-gb-2-x-8-gb-ddr4-3200-memory-hx432c16fb3k216",
         "https://pcpartpicker.com/product/6JRzK8/adata-xpg-z1-16gb-2-x-8gb-ddr4-3000-memory-ax4u300038g16-drz",
         "https://pcpartpicker.com/product/hFdrxr/gskill-trident-z-neo-64-gb-4-x-16-gb-ddr4-3600-memory-f4-3600c16q-64gtznc",
         "https://pcpartpicker.com/product/3yQG3C/corsair-vengeance-rgb-pro-32gb-4-x-8gb-ddr4-3200-memory-cmw32gx4m4c3200c16",
-        "https://pcpartpicker.com/product/vVVD4D/patriot-viper-steel-16-gb-2-x-8-gb-ddr4-4400-cl19-memory-pvs416g440c9k",
+        "https://pcpartpicker.com/product/pyzkcf/gskill-trident-z-royal-16-gb-2-x-8-gb-ddr4-3200-memory-f4-3200c16d-16gtrs",
+        "https://pcpartpicker.com/product/tW8j4D/corsair-vengeance-rgb-pro-64gb-4-x-16gb-ddr4-3200-memory-cmw64gx4m4c3200c16w",
         "https://pcpartpicker.com/product/YcTzK8/kingston-hyperx-fury-rgb-16-gb-2-x-8-gb-ddr4-3200-memory-hx432c16fb3ak216"
         ]
 
