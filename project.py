@@ -181,8 +181,8 @@ def main():
     # create a database connection
     conn = openConnection(database)
     with conn:
-        #dropTable(conn)
-        #createTable(conn)
+        dropTable(conn)
+        createTable(conn)
         populateTable(conn)
 
     closeConnection(conn, database)
