@@ -172,7 +172,7 @@ def populateTable(_conn):
     print("++++++++++++++++++++++++++++++++++")
     print("Populate table")
 
-    subprocess.Popen(["bash", "test.sh"])
+    subprocess.Popen(["bash", "load.sh"])
     print("++++++++++++++++++++++++++++++++++")
 
 def main():

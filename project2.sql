@@ -31,7 +31,7 @@ values ('Crucial Ballistix Sport 8 GB (2 x 4 GB) DDR3-1600 CL9 Memory', 69.99, '
 --insert into Storage
 --values (name, price, manufacturer, capacity, type, cache)
 insert into Storage
-values ('Kingston HyperX Fury 120 GB 2.5" Solid State Drive', 79.99, 'Kingston', '120 GB', 'SSD', '500MB')
+values ('Kingston HyperX Fury 120 GB 2.5" Solid State Drive', 79.99, 'Kingston', '120 GB', 'SSD')
 
 --insert into User
 --values (name, password)
@@ -39,8 +39,10 @@ insert into Users
 values ('girizarrytorres', 'notmyactualpassword73')
 
 --insert into Build (cpu, gpu, motherboard, ram, storage, psu, tower) --should auto insert user + code
-insert into Build (b_cpu, b_gpu, b_motherboard, b_ram, b_storage, b_psu, b_tower)
-values ('Intel Core i5-4460 3.2 GHz Quad-Core Processor',
+insert into Build (b_user, b_code, b_cpu, b_gpu, b_motherboard, b_ram, b_storage, b_psu, b_tower)
+values ('girizarrytorres',
+        'L7ZX72L6',
+        'Intel Core i5-4460 3.2 GHz Quad-Core Processor',
         'EVGA GeForce GTX 1060 3GB 3 GB SC GAMING Video Card',
         'Gigabyte GA-Z97X-Gaming 3 ATX LGA1150 Motherboard',
         'Crucial Ballistix Sport 8 GB (2 x 4 GB) DDR3-1600 CL9 Memory',
@@ -111,3 +113,7 @@ where b_user = 'girizarrytorres' and b_code = 'L7ZX72L6'
 --where name = this.user
 delete from Users
 where u_name = 'girizarrytorres'
+
+UPDATE Build
+set b_cpu = 'AMD Ryzen 5 3600 3.6 GHz 6-Core Processor', 199, 'AMD',6,'3.6 GHz', '4.2 GHz'
+WHERE b_code = 'L7ZX72L6'
