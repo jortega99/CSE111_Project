@@ -54,8 +54,8 @@ def createTable(_conn):
                 GPU_manufactuer VARCHAR(10) not null,
                 GPU_chipset VARCHAR(30) not null,
                 GPU_memory VARCHAR(5) not null,
-                GPU_boostclock VARCHAR(10) not null,
-                GPU_coreclock VARCHAR(10) not null)"""
+                GPU_coreclock VARCHAR(10) not null,
+                GPU_boostclock VARCHAR(10) not null)"""
         _conn.execute(sql)
 
         sql = """CREATE TABLE MotherBoard (
@@ -81,8 +81,7 @@ def createTable(_conn):
                 Storage_price decimal(7, 2) not null,
                 Storage_manufactuer VARCHAR(10) not null,
                 Storage_capacity VARCHAR(30) not null,
-                Storage_type VARCHAR(10) not null,
-                Storage_cache VARCHAR(10) not null)"""
+                Storage_type VARCHAR(10) not null)"""
         _conn.execute(sql)
 
         sql = """CREATE TABLE Tower (
@@ -101,18 +100,19 @@ def createTable(_conn):
         _conn.execute(sql)
 
         sql = """CREATE TABLE Build (
-                b_user CHAR(30) not null,
-                b_code VARCHAR(10) not null,
+                b_user CHAR(30),
+                b_code VARCHAR(10),
                 b_cpu VARCHAR(60) not null,
                 b_gpu VARCHAR(60) not null,
                 b_motherboard VARCHAR(60) not null,
                 b_psu VARCHAR(60) not null,
                 b_storage VARCHAR(100) not null,
                 b_tower VARCHAR(60) not null,
-                b_ram VARCHAR(100) not null)"""
+                b_ram VARCHAR(100) not null,
+                b_price decimal(7,2))"""
         _conn.execute(sql)
 
-        sql = """CREATE TABLE user (
+        sql = """CREATE TABLE Users (
                 u_name VARCHAR(30) not null,
                 u_password VARCHAR(20) not null)"""
         _conn.execute(sql)

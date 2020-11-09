@@ -29,7 +29,7 @@ def getGPU(url):
 
     f = open("Components/Tables/GPU.csv","a+")
     sys.stdout = f
-    print(product['name'],p, product['manufactuer'], product['chipset'], product['memory'], product['boostclock'], product['coreclock'], sep="|")
+    print(product['name'],p, product['manufactuer'], product['chipset'], product['memory'], product['coreclock'], product['boostclock'], sep="|")
     f.close()
     sys.stdout = original
     return product
