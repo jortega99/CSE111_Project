@@ -472,6 +472,12 @@ def main():
     conn = openConnection(database)
     with conn:
         Q1(conn)
+        Q1(conn)
+        Q1(conn)
+        Q1(conn)
+        Q1(conn)
+        Q1(conn)
+        Q1(conn)
 
     closeConnection(conn, database)
 

@@ -40,6 +40,7 @@ def createTable(_conn):
 
     try:
         sql = """CREATE TABLE CPU (
+                CPU_id VARCHAR(10) not null,
                 CPU_name VARCHAR(60) not null,
                 CPU_price decimal(7, 2) not null,
                 CPU_manufactuer VARCHAR(10) not null,
@@ -49,6 +50,7 @@ def createTable(_conn):
         _conn.execute(sql)
 
         sql = """CREATE TABLE GPU (
+                GPU_id VARCHAR(10) not null,
                 GPU_name VARCHAR(60) not null,
                 GPU_price decimal(7, 2) not null,
                 GPU_manufactuer VARCHAR(10) not null,
@@ -59,6 +61,7 @@ def createTable(_conn):
         _conn.execute(sql)
 
         sql = """CREATE TABLE MotherBoard (
+                MB_id VARCHAR(10) not null,
                 MB_name VARCHAR(60) not null,
                 MB_price decimal(7, 2) not null,
                 MB_manufactuer VARCHAR(10) not null,
@@ -67,6 +70,7 @@ def createTable(_conn):
         _conn.execute(sql)
 
         sql = """CREATE TABLE PSU (
+                PSU_id VARCHAR(10) not null,
                 PSU_name VARCHAR(60) not null,
                 PSU_price decimal(7, 2) not null,
                 PSU_manufactuer VARCHAR(10) not null,
@@ -77,6 +81,7 @@ def createTable(_conn):
         _conn.execute(sql)
 
         sql = """CREATE TABLE Storage (
+                Storage_id VARCHAR(10) not null,
                 Storage_name VARCHAR(100) not null,
                 Storage_price decimal(7, 2) not null,
                 Storage_manufactuer VARCHAR(10) not null,
@@ -85,6 +90,7 @@ def createTable(_conn):
         _conn.execute(sql)
 
         sql = """CREATE TABLE Tower (
+                Case_id VARCHAR(10) not null,
                 Case_name VARCHAR(60) not null,
                 Case_price decimal(7, 2) not null,
                 Case_manufactuer VARCHAR(10) not null,
@@ -92,6 +98,7 @@ def createTable(_conn):
         _conn.execute(sql)
 
         sql = """CREATE TABLE RAM(
+                RAM_id VARCHAR(10) not null,
                 RAM_name VARCHAR(100) not null,
                 RAM_price decimal(7,2) not null,
                 RAM_manufactuer VARCHAR(10) not null,
