@@ -189,7 +189,7 @@ def main():
     conn = openConnection(database)
     with conn:
         #dropTable(conn)
-        #createTable(conn)
+        createTable(conn)
         populateTable(conn)
 
     closeConnection(conn, database)

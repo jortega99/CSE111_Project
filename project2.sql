@@ -117,3 +117,5 @@ where u_name = 'girizarrytorres'
 UPDATE Build
 set b_cpu = 'AMD Ryzen 5 3600 3.6 GHz 6-Core Processor', 199, 'AMD',6,'3.6 GHz', '4.2 GHz'
 WHERE b_code = 'L7ZX72L6'
+
+DROP TABLE user
