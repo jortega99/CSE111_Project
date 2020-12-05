@@ -40,6 +40,7 @@ def createTable(_conn):
 
     try:
         sql = """CREATE TABLE CPU (
+                CPU_id VARCHAR(10) not null,
                 CPU_name VARCHAR(60) not null,
                 CPU_price decimal(7, 2) not null,
                 CPU_manufactuer VARCHAR(10) not null,
@@ -49,16 +50,18 @@ def createTable(_conn):
         _conn.execute(sql)
 
         sql = """CREATE TABLE GPU (
+                GPU_id VARCHAR(10) not null,
                 GPU_name VARCHAR(60) not null,
                 GPU_price decimal(7, 2) not null,
                 GPU_manufactuer VARCHAR(10) not null,
                 GPU_chipset VARCHAR(30) not null,
                 GPU_memory VARCHAR(5) not null,
-                GPU_boostclock VARCHAR(10) not null,
-                GPU_coreclock VARCHAR(10) not null)"""
+                GPU_coreclock VARCHAR(10) not null,
+                GPU_boostclock VARCHAR(10) not null)"""
         _conn.execute(sql)
 
         sql = """CREATE TABLE MotherBoard (
+                MB_id VARCHAR(10) not null,
                 MB_name VARCHAR(60) not null,
                 MB_price decimal(7, 2) not null,
                 MB_manufactuer VARCHAR(10) not null,
@@ -67,6 +70,7 @@ def createTable(_conn):
         _conn.execute(sql)
 
         sql = """CREATE TABLE PSU (
+                PSU_id VARCHAR(10) not null,
                 PSU_name VARCHAR(60) not null,
                 PSU_price decimal(7, 2) not null,
                 PSU_manufactuer VARCHAR(10) not null,
@@ -77,15 +81,16 @@ def createTable(_conn):
         _conn.execute(sql)
 
         sql = """CREATE TABLE Storage (
+                Storage_id VARCHAR(10) not null,
                 Storage_name VARCHAR(100) not null,
                 Storage_price decimal(7, 2) not null,
                 Storage_manufactuer VARCHAR(10) not null,
                 Storage_capacity VARCHAR(30) not null,
-                Storage_type VARCHAR(10) not null,
-                Storage_cache VARCHAR(10) not null)"""
+                Storage_type VARCHAR(10) not null)"""
         _conn.execute(sql)
 
         sql = """CREATE TABLE Tower (
+                Case_id VARCHAR(10) not null,
                 Case_name VARCHAR(60) not null,
                 Case_price decimal(7, 2) not null,
                 Case_manufactuer VARCHAR(10) not null,
@@ -93,6 +98,7 @@ def createTable(_conn):
         _conn.execute(sql)
 
         sql = """CREATE TABLE RAM(
+                RAM_id VARCHAR(10) not null,
                 RAM_name VARCHAR(100) not null,
                 RAM_price decimal(7,2) not null,
                 RAM_manufactuer VARCHAR(10) not null,
@@ -101,18 +107,19 @@ def createTable(_conn):
         _conn.execute(sql)
 
         sql = """CREATE TABLE Build (
-                b_user CHAR(30) not null,
-                b_code VARCHAR(10) not null,
+                b_user CHAR(30),
+                b_code VARCHAR(10),
                 b_cpu VARCHAR(60) not null,
                 b_gpu VARCHAR(60) not null,
                 b_motherboard VARCHAR(60) not null,
                 b_psu VARCHAR(60) not null,
                 b_storage VARCHAR(100) not null,
                 b_tower VARCHAR(60) not null,
-                b_ram VARCHAR(100) not null)"""
+                b_ram VARCHAR(100) not null,
+                b_price decimal(7,2))"""
         _conn.execute(sql)
 
-        sql = """CREATE TABLE user (
+        sql = """CREATE TABLE Users (
                 u_name VARCHAR(30) not null,
                 u_password VARCHAR(20) not null)"""
         _conn.execute(sql)
@@ -172,7 +179,7 @@ def populateTable(_conn):
     print("++++++++++++++++++++++++++++++++++")
     print("Populate table")
 
-    subprocess.Popen(["bash", "test.sh"])
+    subprocess.Popen(["bash", "load.sh"])
     print("++++++++++++++++++++++++++++++++++")
 
 def main():
