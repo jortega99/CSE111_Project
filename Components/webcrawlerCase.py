@@ -27,27 +27,13 @@ def getGPU(url):
 
     f = open("Components/Tables/Case.csv","a+")
     sys.stdout = f
-    print(product['name'],p, product['manufactuer'], product['formfactor'], sep="|")
+    print('C_13',product['name'],p, product['manufactuer'], product['formfactor'], sep="|")
     f.close()
     sys.stdout = original
     return product
 
-if os.path.isfile("Components/Tables/Case.csv"):
-    os.remove("Components/Tables/Case.csv")
-
 URLS = [
-        "https://pcpartpicker.com/product/6Cyqqs/nzxt-h510-atx-mid-tower-case-ca-h510b-w1",
-        "https://pcpartpicker.com/product/b7hmP6/nzxt-h510-atx-mid-tower-case-ca-h510b-b1",
-        "https://pcpartpicker.com/product/Y6Crxr/fractal-design-meshify-c-atx-mid-tower-case-fd-ca-mesh-c-bko-tg",
-        "https://pcpartpicker.com/product/VxRzK8/lian-li-pc-o11dw-atx-full-tower-case-pc-o11dw",
-        "https://pcpartpicker.com/product/rnGxFT/cooler-master-masterbox-q300l-microatx-mini-tower-case-mcb-q300l-kann-s00",
-        "https://pcpartpicker.com/product/sY9tt6/corsair-275r-airflow-atx-mid-tower-case-cc-9011181-ww",
-        "https://pcpartpicker.com/product/kpx2FT/nzxt-h510-elite-atx-mid-tower-case-ca-h510e-w1",
-        "https://pcpartpicker.com/product/ycbCmG/corsair-275r-airflow-atx-mid-tower-case-cc-9011182-ww",
-        "https://pcpartpicker.com/product/Hwkj4D/lian-li-pc-o11dx-atx-full-tower-case-pc-o11dx",
-        "https://pcpartpicker.com/product/kRFKHx/lian-li-lancool-ii-x-atx-mid-tower-case-lancool-ii-x",
-        "https://pcpartpicker.com/product/gfn8TW/cooler-master-masterbox-td500-mesh-white-w-controller-atx-mid-tower-case-mcb-d500d-wgnn-s01",
-        "https://pcpartpicker.com/product/bCYQzy/corsair-4000d-airflow-atx-mid-tower-case-cc-9011200-ww"
+        "https://pcpartpicker.com/product/YcCFf7/rosewill-prism-s-lite-atx-mid-tower-case-prism-s-black-lite"
         ]
 
 URLS_length = len(URLS)
